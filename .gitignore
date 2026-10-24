@@ -1,0 +1,4 @@
+secrets/
+*.env
+agent.yaml
+clab-*/
