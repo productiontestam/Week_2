@@ -184,3 +184,13 @@ NetBox مرجع اصلی موجودی تأییدشده شبکه در نظر گر
 ۷. Logها و مراحل عیب‌یابی مستند شده باشند.
 
 ۸. هیچ شبکه غیرمجاز یا اطلاعات موجود در NetBox بدون تأیید تغییر نکند.
+
+## 13. درس‌های پیاده‌سازی
+
+| مشکل | علت | راه‌حل |
+|---|---|---|
+| `403 Invalid token` در Reconciler | `diode_target` پلاگین روی مقدار پیش‌فرض `localhost:8080` مانده بود | تنظیم `PLUGINS_CONFIG` با آدرس واقعی ingress |
+| `password authentication failed for user "diode"` به‌صورت تصادفی | دو Postgres و دو Redis با نام سرویس یکسان (`postgres`، `redis`) در یک شبکه‌ی Docker؛ DNS گاهی دیگری را برمی‌گرداند | استفاده از نام یکتای کانتینر در `POSTGRES_HOST` و `REDIS_HOST` (هر دو پشته) |
+| `502 Bad Gateway` بعد از ساخت دوباره‌ی سرویس‌ها | nginx آدرس IP قدیمی upstream را نگه می‌دارد | بعد از هر ساخت دوباره‌ی سرویس‌های Diode، `ingress-nginx` هم ری‌استارت شود |
+| کابل جعلی روی `eth0` | `lldpd` روی اینترفیس Management هم فعال بود | `lldpd -I 'eth*,!eth0'` |
+| `Error opening specified endpoint "udp:161"` | `snmpd` فایل تنظیمات پیش‌فرض را دو بار می‌خواند | گزینه‌ی `-C` به همراه `-c` |
