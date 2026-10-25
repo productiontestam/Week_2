@@ -37,7 +37,7 @@ def links_for(device, host):
 
 
 def terminal(end):
-    interface = Interface(device=Device(name=end[0]), name=end[1])
+    interface = Interface(device=Device(name=end[0], site="undefined"), name=end[1])
     return [GenericObject(object_interface=interface)]
 
 
