@@ -772,17 +772,17 @@ Every 15 minutes
 
 پروژه زمانی قابل قبول خواهد بود که موارد زیر با آزمایش عملی تأیید شوند:
 
--   [x] ایجاد توپولوژی Containerlab
--   [x] ایجاد شبکه مدیریت Lab
--   [x] اجرای Orb Agent
--   [x] دریافت و اعمال Policyهای SNMP
--   [x] اجرای موفق SNMP Discovery برای Router
--   [x] اجرای موفق SNMP Discovery برای Switch
--   [x] اجرای موفق SNMP Discovery برای Server
+-   [ ] ایجاد توپولوژی Containerlab
+-   [ ] ایجاد شبکه مدیریت Lab
+-   [ ] اجرای Orb Agent
+-   [ ] دریافت و اعمال Policyهای SNMP
+-   [ ] اجرای موفق SNMP Discovery برای Router
+-   [ ] اجرای موفق SNMP Discovery برای Switch
+-   [ ] اجرای موفق SNMP Discovery برای Server
 -   [ ] اجرای موفق Nmap Discovery و ثبت نتایج
 -   [ ] اجرای موفق Device Discovery و ثبت نتایج
 -   [ ] تأیید مشاهده داده‌های Discovery در NetBox
--   [x] راه‌اندازی Stack مبتنی بر MySQL در Zabbix
+-   [ ] راه‌اندازی Stack مبتنی بر MySQL در Zabbix
 -   [ ] دریافت Deviceها از NetBox API توسط Script
 -   [ ] ایجاد خودکار Host در Zabbix
 -   [ ] تخصیص خودکار Host Group و Template
