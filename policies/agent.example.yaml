@@ -1,0 +1,49 @@
+orb:
+  backends:
+    common:
+      diode:
+        target: grpc://192.168.1.102:8080/diode
+        client_id: ${DIODE_CLIENT_ID}
+        client_secret: ${DIODE_CLIENT_SECRET}
+    snmp_discovery:
+  policies:
+    snmp_discovery:
+      lab_snmp_router:
+        config:
+          timeout: 120
+          schedule: "0 * * * *"
+          defaults:
+            role: router
+            tags: ["discovered", "snmp-discovery"]
+        scope:
+          targets:
+            - host: 10.10.10.2
+          authentication:
+            protocol_version: "SNMPv2c"
+            community: ${SNMP_COMMUNITY}
+      lab_snmp_switch:
+        config:
+          timeout: 120
+          schedule: "5 * * * *"
+          defaults:
+            role: switch
+            tags: ["discovered", "snmp-discovery"]
+        scope:
+          targets:
+            - host: 10.10.10.4
+          authentication:
+            protocol_version: "SNMPv2c"
+            community: ${SNMP_COMMUNITY}
+      lab_snmp_server:
+        config:
+          timeout: 120
+          schedule: "10 * * * *"
+          defaults:
+            role: server
+            tags: ["discovered", "snmp-discovery"]
+        scope:
+          targets:
+            - host: 10.10.10.3
+          authentication:
+            protocol_version: "SNMPv2c"
+            community: ${SNMP_COMMUNITY}
