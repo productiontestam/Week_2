@@ -1,0 +1,15 @@
+services:
+  netbox:
+    image: netbox-custom:4.7.3
+    build:
+      context: .
+      dockerfile: Dockerfile-Plugins
+    ports:
+      - "8000:8080"
+    volumes:
+      - ./secrets/netbox_to_diode:/run/secrets/netbox_to_diode:ro
+
+  netbox-worker:
+    image: netbox-custom:4.7.3
+    volumes:
+      - ./secrets/netbox_to_diode:/run/secrets/netbox_to_diode:ro
