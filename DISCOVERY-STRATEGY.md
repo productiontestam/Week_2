@@ -1,11 +1,5 @@
 # DISCOVERY STRATEGY
 
-## Network Discovery, NetBox Diode و Zabbix Integration
-
-**آخرین بازبینی:** 2026-10-31\
-**وضعیت سند:** نسخه به‌روزشده بر اساس شواهد و خروجی‌های ثبت‌شده در لَب\
-**محیط اجرا:** Ubuntu VM، Docker Compose و Containerlab
-
 ------------------------------------------------------------------------
 
 ## 1. هدف پروژه
